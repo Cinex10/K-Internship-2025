@@ -1,0 +1,6 @@
+{
+    "emails": "PLACEHOLDER_REGEX_FOR_EMAILS",
+    "dates": "PLACEHOLDER_REGEX_FOR_DATES",
+    "ips": "PLACEHOLDER_REGEX_FOR_IPS",
+    "colors": "PLACEHOLDER_REGEX_FOR_COLORS"
+}
