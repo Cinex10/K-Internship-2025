@@ -1,6 +1,6 @@
 {
-    "emails": "PLACEHOLDER_REGEX_FOR_EMAILS",
-    "dates": "PLACEHOLDER_REGEX_FOR_DATES",
+    "emails": "^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\\.[a-zA-Z]{2,6}$",
+    "dates": "^[19|20]{1}\\d{2}-[]$",
     "ips": "PLACEHOLDER_REGEX_FOR_IPS",
     "colors": "PLACEHOLDER_REGEX_FOR_COLORS"
 }
