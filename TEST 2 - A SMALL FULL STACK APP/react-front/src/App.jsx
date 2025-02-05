@@ -38,12 +38,12 @@ function App() {
     e.preventDefault();
     if (!newNotebookName.trim()) return;
     await api.addNotebook(newNotebookName);
-    setNewNotebookName('');
+    setNewNotebookName(newNotebookName);
     await loadNotebooks();
   };
 
   const handleDeleteNotebook = async (id) => {
-    api.deleteNotebook(id);
+    await api.deleteNotebook(id);
     loadNotebooks();
     if (selectedNotebook?.id === id) {
       setSelectedNotebook(null);
@@ -60,6 +60,14 @@ function App() {
     });
     setNoteTitle('');
     setNoteContent('');
+  };
+  
+  const sortNotesAlphabet = async (notebookId) => {
+    const loadedNotes = await api.getNotes(notebookId);
+    loadedNotes.sort(function(a, b) {
+      return a.title.localeCompare(b.title);
+    });
+    setNotes(loadedNotes);
   };
 
   const handleSaveNote = async () => {
@@ -131,6 +139,7 @@ function App() {
             onNoteTitleChange={handleNoteTitleChange}
             onSaveNote={handleSaveNote}
             onCancelEdit={() => setEditingNote(null)}
+            sortNotesAlphabet={() => sortNotesAlphabet(selectedNotebook.id)}
           />
         </div>
       </div>

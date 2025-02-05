@@ -1,5 +1,6 @@
 import React from 'react';
 import { Plus } from 'lucide-react';
+import { ArrowDownAZ } from 'lucide-react';
 import { Note } from './Note';
 import { NoteEditor } from './NoteEditor';
 
@@ -10,6 +11,7 @@ export function NoteList({
   noteTitle,
   noteContent,
   onAddNote,
+  sortNotesAlphabet,
   onEditNote,
   onDeleteNote,
   onNoteContentChange,
@@ -31,6 +33,14 @@ export function NoteList({
             >
               <Plus className="h-5 w-5" />
               New Note
+            </button>
+
+            <button
+              onClick={sortNotesAlphabet}
+              className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors flex items-center gap-2"
+            >
+              <ArrowDownAZ className="h-5 w-5" />
+              Sort Alphabetically
             </button>
           </div>
 

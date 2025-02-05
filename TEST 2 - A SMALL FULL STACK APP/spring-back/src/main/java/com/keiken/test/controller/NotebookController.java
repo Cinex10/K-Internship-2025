@@ -10,6 +10,7 @@ import com.keiken.test.service.NoteService;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api/notebooks")
 public class NotebookController {
@@ -25,6 +26,7 @@ public class NotebookController {
     @GetMapping
     public ResponseEntity<List<Notebook>> getAllNotebooks() {
         List<Notebook> notebooks = notebookService.getAllNotebooks();
+        
         return ResponseEntity.ok(notebooks);
     }
 
